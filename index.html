@@ -45,7 +45,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="null" class="js-avatar">
+			<img src="./img/wy.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">weiyinok</a></h1>
@@ -103,7 +103,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="null" class="js-avatar">
+				<img src="./img/wy.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">weiyinok</h1>
@@ -153,6 +153,104 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-my-second-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/01/my-second-blog/">Hexo + Github 搭建个人博客</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/01/my-second-blog/" class="archive-article-date">
+  	<time datetime="2017-06-30T17:40:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>备注：下文是基于windows环境的博客搭建</p>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><blockquote>
+<ul>
+<li>github账号（木有的话，请去官网注册）</li>
+<li>安装Node.js  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下载地址：<a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a></li>
+<li>安装Git for Windows   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 下载地址：<a href="https://git-for-windows.github.io/" target="_blank" rel="external">https://git-for-windows.github.io/</a></li>
+<li>安装Hexo</li>
+</ul>
+</blockquote>
+<h4 id="github中创建仓库"><a href="#github中创建仓库" class="headerlink" title="github中创建仓库"></a>github中创建仓库</h4><ul>
+<li>新建一个仓库名，例如：本人github用户名为 <code>weiyinok</code>，则创建为 <code>weiyinok.github.io</code> 的仓库（必须是你的用户名，其它名称无效，每一个github账户只能创建一个此域名账户），将来你的网站访问地址就是 <a href="https://weiyinok.github.io/" target="_blank" rel="external">https://weiyinok.github.io/</a></li>
+</ul>
+<h4 id="Git-for-Windows安装和基本设置："><a href="#Git-for-Windows安装和基本设置：" class="headerlink" title="Git for Windows安装和基本设置："></a>Git for Windows安装和基本设置：</h4><h5 id="1-git安装"><a href="#1-git安装" class="headerlink" title="1.git安装"></a>1.git安装</h5><p><img src="https://raw.githubusercontent.com/weiyinok/MarkdownPhotos/master/192146048189884.jpg" alt="cmd-markdown-logo"></p>
+<p><img src="https://raw.githubusercontent.com/weiyinok/MarkdownPhotos/master/192147042247370.jpg" alt="cmd-markdown-logo"></p>
+<p><img src="https://raw.githubusercontent.com/weiyinok/MarkdownPhotos/master/192147156627175.jpg" alt="cmd-markdown-logo"><br>其它的一路next直到最后完成。</p>
+<h5 id="2-配置github的ssh密钥"><a href="#2-配置github的ssh密钥" class="headerlink" title="2.配置github的ssh密钥"></a>2.配置github的ssh密钥</h5><h5 id="1-打开Git-Bash查看电脑上是否已经存在SSH密钥："><a href="#1-打开Git-Bash查看电脑上是否已经存在SSH密钥：" class="headerlink" title="(1)打开Git Bash查看电脑上是否已经存在SSH密钥："></a>(1)打开Git Bash查看电脑上是否已经存在SSH密钥：</h5><h5 id="输入-cd-ssh-由于我本地已配置过SSH-Keys，截图如下："><a href="#输入-cd-ssh-由于我本地已配置过SSH-Keys，截图如下：" class="headerlink" title="输入 cd ~/.ssh ,由于我本地已配置过SSH Keys，截图如下："></a>输入 <code>cd ~/.ssh</code> ,由于我本地已配置过SSH Keys，截图如下：</h5><p><img src="https://raw.githubusercontent.com/weiyinok/MarkdownPhotos/master/3.png" alt="cmd-markdown-logo"></p>
+<p>#####（ls查看当前路径文件，rm * 删除所有文件） 备注：首次安装若没配置则会提示： <code>No such file or directory</code> ，这种情况就需要创建SSH Keys了</p>
+<h5 id="2-创建新的ssh-key"><a href="#2-创建新的ssh-key" class="headerlink" title="(2)创建新的ssh key:"></a>(2)创建新的ssh key:</h5><h5 id="输入-ssh-keygen-t-rsa-C-quot-your-email-youremail-com-quot"><a href="#输入-ssh-keygen-t-rsa-C-quot-your-email-youremail-com-quot" class="headerlink" title="输入 ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;"></a>输入 <code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</code></h5><p><img src="https://raw.githubusercontent.com/weiyinok/MarkdownPhotos/master/8.png" alt="cmd-markdown-logo"></p>
+<h5 id="执行这条命令会如上图提示文件保存路径，直接按Enter。接着输入-y-然后提示输入-passphrase（密码），输入两次（可以不输直接两次Enter）。备注：输入密码时，处于安全性考虑，界面上不会显示密码"><a href="#执行这条命令会如上图提示文件保存路径，直接按Enter。接着输入-y-然后提示输入-passphrase（密码），输入两次（可以不输直接两次Enter）。备注：输入密码时，处于安全性考虑，界面上不会显示密码" class="headerlink" title="执行这条命令会如上图提示文件保存路径，直接按Enter。接着输入 y,然后提示输入 passphrase（密码），输入两次（可以不输直接两次Enter）。备注：输入密码时，处于安全性考虑，界面上不会显示密码"></a>执行这条命令会如上图提示文件保存路径，直接按Enter。接着输入 <code>y</code>,然后提示输入 passphrase（密码），输入两次（可以不输直接两次Enter）。备注：输入密码时，处于安全性考虑，界面上不会显示密码</h5><p><img src="https://raw.githubusercontent.com/weiyinok/MarkdownPhotos/master/9.png" alt="cmd-markdown-logo"></p>
+<h5 id="然后会在-ssh-目录生产两个文件：id-rsa-和-id-rsa-pub"><a href="#然后会在-ssh-目录生产两个文件：id-rsa-和-id-rsa-pub" class="headerlink" title="然后会在 .ssh 目录生产两个文件：id_rsa 和 id_rsa.pub"></a>然后会在 <code>.ssh</code> 目录生产两个文件：<code>id_rsa</code> 和 <code>id_rsa.pub</code></h5><h5 id="编辑器中打开本地-ssh目录下的id-rsa-pub文件，复制里面的内容"><a href="#编辑器中打开本地-ssh目录下的id-rsa-pub文件，复制里面的内容" class="headerlink" title="编辑器中打开本地.ssh目录下的id_rsa.pub文件，复制里面的内容"></a>编辑器中打开本地.ssh目录下的id_rsa.pub文件，复制里面的内容</h5><p><img src="https://raw.githubusercontent.com/weiyinok/MarkdownPhotos/master/2.png" alt="cmd-markdown-logo"></p>
+<h5 id="3、复制ssh-key到github："><a href="#3、复制ssh-key到github：" class="headerlink" title="3、复制ssh key到github："></a>3、复制ssh key到github：</h5><p><img src="https://raw.githubusercontent.com/weiyinok/MarkdownPhotos/master/10.png" alt="cmd-markdown-logo"></p>
+<h5 id="如上图-打开github网站，右上角的图标处点击-Settings"><a href="#如上图-打开github网站，右上角的图标处点击-Settings" class="headerlink" title="如上图,打开github网站，右上角的图标处点击 Settings"></a>如上图,打开github网站，右上角的图标处点击 <code>Settings</code></h5><p><img src="https://raw.githubusercontent.com/weiyinok/MarkdownPhotos/master/11.png" alt="cmd-markdown-logo"></p>
+<h5 id="然后点击左边菜单的-ssh-key，-然后右边页面的-new-ssh-key，将复制的内容粘贴到github的key中，title可以不填，直接保存即可。"><a href="#然后点击左边菜单的-ssh-key，-然后右边页面的-new-ssh-key，将复制的内容粘贴到github的key中，title可以不填，直接保存即可。" class="headerlink" title="然后点击左边菜单的 ssh key， 然后右边页面的 new ssh key，将复制的内容粘贴到github的key中，title可以不填，直接保存即可。"></a>然后点击左边菜单的 ssh key， 然后右边页面的 <code>new ssh key</code>，将复制的内容粘贴到github的key中，title可以不填，直接保存即可。</h5><h5 id="4、测试-ssh-链接-github："><a href="#4、测试-ssh-链接-github：" class="headerlink" title="4、测试 ssh 链接 github："></a>4、测试 ssh 链接 github：</h5><h5 id="输入-ssh-T-git-github-com"><a href="#输入-ssh-T-git-github-com" class="headerlink" title="输入 ssh -T git@github.com"></a>输入 <code>ssh -T git@github.com</code></h5><p><img src="https://raw.githubusercontent.com/weiyinok/MarkdownPhotos/master/7.png" alt="cmd-markdown-logo"></p>
+<h5 id="出现Successfully就OK；"><a href="#出现Successfully就OK；" class="headerlink" title="出现Successfully就OK；"></a>出现Successfully就OK；</h5><h5 id="5、设置自己的git信息："><a href="#5、设置自己的git信息：" class="headerlink" title="5、设置自己的git信息："></a>5、设置自己的git信息：</h5><h5 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --<span class="keyword">global</span> user.name <span class="string">"weiyinok"</span> // 你的github用户名，非昵称</div><div class="line">git config --<span class="keyword">global</span> user.email <span class="string">"xxx@gmail.com"</span> // 填写你的github注册邮箱</div></pre></td></tr></table></figure>
+<h5 id="设置自己的git信息即完成安装和设置，可以输入-git-config-list-查看自己的git信息。"><a href="#设置自己的git信息即完成安装和设置，可以输入-git-config-list-查看自己的git信息。" class="headerlink" title="设置自己的git信息即完成安装和设置，可以输入 git config --list 查看自己的git信息。"></a>设置自己的git信息即完成安装和设置，可以输入 <code>git config --list</code> 查看自己的git信息。</h5><h4 id="重点列出Hexo安装命令："><a href="#重点列出Hexo安装命令：" class="headerlink" title="重点列出Hexo安装命令："></a>重点列出Hexo安装命令：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> G:/hexo</div><div class="line">npm install hexo-cli -g</div><div class="line">hexo init blog</div><div class="line"><span class="built_in">cd</span> blog</div><div class="line">npm install</div><div class="line">hexo g <span class="comment"># 或者hexo generate</span></div><div class="line">hexo s <span class="comment"># 或者hexo server，可以在http://localhost:4000/ 查看</span></div></pre></td></tr></table></figure>
+<h4 id="Hexo常用命令："><a href="#Hexo常用命令：" class="headerlink" title="Hexo常用命令："></a>Hexo常用命令：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo generate (hexo g) <span class="comment">#生成静态文件，会在当前目录下生成一个新的叫做public的文件夹</span></div><div class="line">hexo server (hexo s) <span class="comment">#启动本地web服务，用于博客的预览</span></div><div class="line">hexo deploy (hexo d) <span class="comment">#部署博客到远端（比如github平台）</span></div><div class="line">hexo new <span class="string">"postName"</span> <span class="comment">#新建文章</span></div><div class="line">hexo new page <span class="string">"pageName"</span> <span class="comment">#新建页面</span></div></pre></td></tr></table></figure>
+<h4 id="常用简写："><a href="#常用简写：" class="headerlink" title="常用简写："></a>常用简写：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hexo n == hexo new</div><div class="line">hexo g == hexo generate</div><div class="line">hexo s == hexo server</div><div class="line">hexo d == hexo deploy</div></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/07/01/my-second-blog/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术分享</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/默认分类/" class="article-tag-list-link color5">默认分类</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/01/my-second-blog/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -372,6 +470,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">人生</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术分享</a>
               </li>
             
             <div class="clearfix"></div>
